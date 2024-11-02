@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product preview card component</title>
+    
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@100..900&family=Montserrat:wght@100..900&family=Poppins:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              fontFamily: {
+                Title: ['Fraunces', 'sans-serif'],
+                Paragraph: ['Montserrat', 'sans-serif'],
+              },
+              colors: {
+                DarkCyan: 'hsl(158, 36%, 37%)',
+                Cream: 'hsl(30, 38%, 92%)',
+                VeryDarkBlue: 'hsl(212, 21%, 14%)',
+                DarkGrayishBlue: 'hsl(228, 12%, 48%)', // Fixed color key
+                White: 'hsl(0, 0%, 100%)',
+              }
+            }
+          }
+        }
+    </script>
+
+    <style>
+        /* Apply global CSS reset */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+   <div class="h-screen w-screen bg-Cream flex items-center justify-center">
+        <div class="rounded flex sm:w-[600px] w-[350px] bg-White sm:flex-row flex-col">
+            <img w class="rounded hidden sm:block w-[300px]" src="./img/image-product-desktop.jpg" alt="products">
+            <img class="sm:hidden block rounded-tl rounded-tr" src="./img/image-product-mobile.jpg" alt="products">
+
+            <div class="p-[30px]">
+                <span class="font-Paragraph text-DarkGrayishBlue font-[600] text-[14px]">PERFUME</span>
+                <div class="font-Title mt-[14px] leading-8 font-[900] text-[30px] text-[25px]">Gabrielle Essence Eau De Parfum</div>
+                <p class="font-Paragraph text-[14px] mt-[30px] sm:w-[230px] w-[300px] font-[600] text-DarkGrayishBlue">A floral, solar and voluptuous interpretation compose by Olivier Polge, Perfumer-Creator for the House of CHANEL</p>
+                <div class="flex items-center gap-3 mt-[20px]">
+                  <span class="font-Title font-bold text-DarkCyan text-3xl">$149.99</span>
+                  <span class="text-sm font-[600] text-DarkGrayishBlue line-through font-Title">$149.99</span>
+                </div>
+                <button class="flex items-center justify-center mt-[30px] bg-DarkCyan rounded w-full h-[50px] font-semibold font-Paragraph text-White gap-3 hover:bg-VeryDarkBlue duration-500">
+                  <img class="w-5" src="./img/icon-cart.svg" alt="cart">
+                  Add to cart
+                </button>
+            </div>
+        </div>
+   </div>
+</body>
+</html>
